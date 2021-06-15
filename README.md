@@ -13,6 +13,10 @@ That's all. Check it: https://0.0.0.0:6081
 
 Notice: The `./disk` folder is mounted to the `/home/telegram/Documents` 
 
+### Start Telegram
+
+Type `Telegram` or `/usr/bin/Telegram` on command line.
+
 ### Default Values:
 
 Please edit these in `docker-compose.yml` file.
