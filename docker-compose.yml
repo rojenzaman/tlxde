@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-    tlxde:
+    tlxqt:
         ports:
             - '6081:443'
         environment:
