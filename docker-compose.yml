@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    ubuntu-desktop-lxde-vnc:
+        ports:
+            - '6081:443'
+        environment:
+            - USER=telegram
+            - PASSWORD=telegram
+            - SSL_PORT=443
+            - HTTP_PASSWORD=telegram
+        volumes:
+            - '${PWD}/disk:/home/telegram/Documents'
+            - '${PWD}/ssl:/etc/nginx/ssl'
+            - '/dev/shm:/dev/shm'
+        build: .
