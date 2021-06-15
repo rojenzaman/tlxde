@@ -10,6 +10,7 @@ services:
             - HTTP_PASSWORD=telegram
         volumes:
             - '${PWD}/disk:/home/telegram/Documents'
+	    - '${PWD}/Telegram Desktop:/home/telegram/Downloads/Telegram Desktop'
             - '${PWD}/ssl:/etc/nginx/ssl'
             - '/dev/shm:/dev/shm'
         build: .
