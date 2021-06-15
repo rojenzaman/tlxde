@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/
-FROM dorowu/ubuntu-desktop-lxde-vnc
+FROM dorowu/ubuntu-desktop-lxde-vnc:focal
 
 # Telegram Version 2.7.4
 RUN wget https://updates.tdesktop.com/tlinux/tsetup.2.7.4.tar.xz -O /tmp/telegram.tar.xz \
