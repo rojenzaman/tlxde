@@ -1,6 +1,6 @@
 ## TLXDE
 
-Run telegram and [LXDE](https://github.com/rojenzaman/tlxde/lxde)/[LXQT](https://github.com/rojenzaman/tlxde/tree/lxqt) desktop environment on the web interface via using docker.
+Run telegram and [LXDE](https://github.com/rojenzaman/tlxde/tree/lxde)/[LXQT](https://github.com/rojenzaman/tlxde/tree/lxqt) desktop environment on the web interface via using docker.
 
 ![screenshot](disk/screenshot.png)
 
