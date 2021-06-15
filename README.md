@@ -12,7 +12,7 @@ $ ./ssl.sh
 ### Then build and deploy the docker-compose stack.
 
 ```
-$ docker-compose up -d
+$ docker-compose up -d --build
 ```
 
 That's all. Check it: https://0.0.0.0:6081
