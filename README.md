@@ -7,13 +7,13 @@ Run telegram and [LXQT](https://github.com/rojenzaman/tlxde/tree/lxqt)/[LXDE](ht
 ### LXQT
 
 ```
-$ git clone --single-branch --branch lxqt https://github.com/rojenzaman/tlxde.git
+$ git clone --single-branch --branch lxqt https://github.com/rojenzaman/tlxde.git lxqt
 ```
 
 ### LXDE
 
 ```bash
-$ git clone --single-branch --branch lxde https://github.com/rojenzaman/tlxde.git
+$ git clone --single-branch --branch lxde https://github.com/rojenzaman/tlxde.git lxde
 ```
 
 ### First generate self signed SSL certificate,
