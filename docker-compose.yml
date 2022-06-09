@@ -12,5 +12,6 @@ services:
             - '${PWD}/disk:/home/telegram/Documents'
             - '${PWD}/Telegram Desktop:/home/telegram/Downloads/Telegram Desktop'
             - '${PWD}/ssl:/etc/nginx/ssl'
+            - '${PWD}/tdata:/home/telegram/.local/share/TelegramDesktop'
             - '/dev/shm:/dev/shm'
         build: .
