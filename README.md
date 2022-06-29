@@ -33,7 +33,11 @@ Notice: The `./disk` folder is mounted to the `/home/telegram/Documents`
 
 ### Start Telegram
 
-Type `Telegram` or `/usr/bin/Telegram` on command line.
+#### In Desktop
+Find Telegram icon on the desktop and click it.
+
+#### In Terminal
+Type `telegram`, `Telegram` or `/usr/bin/Telegram` on command line.
 
 ### Default Values:
 
