@@ -3,15 +3,18 @@ services:
     tlxqt:
         ports:
             - '6081:443'
-        environment:
-            - USER=telegram
-            - PASSWORD=telegram
-            - SSL_PORT=443
-            - HTTP_PASSWORD=telegram
         volumes:
             - '${PWD}/disk:/home/telegram/Documents'
             - '${PWD}/Telegram Desktop:/home/telegram/Downloads/Telegram Desktop'
             - '${PWD}/ssl:/etc/nginx/ssl'
             - '${PWD}/tdata:/home/telegram/.local/share/TelegramDesktop'
             - '/dev/shm:/dev/shm'
-        build: .
+        build:
+            context: .
+            args:
+                USER: telegram
+        environment:
+            - USER=telegram
+            - PASSWORD=telegram
+            - SSL_PORT=443
+            - HTTP_PASSWORD=telegram
