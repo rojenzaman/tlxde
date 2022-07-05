@@ -1,20 +1,15 @@
-## TLXDE
+## Signal with Docker
 
-Run telegram and [LXDE](https://github.com/rojenzaman/tlxde/tree/lxde)/[LXQT](https://github.com/rojenzaman/tlxde/tree/lxqt) desktop environment on the web interface via using docker.
+Run Signal and LXDE desktop environment on the web interface via using docker.
 
-![screenshot](disk/screenshot.png)
+![screenshot](documents/screenshot.png)
 
-### LXDE
+### Clone
 
 ```bash
-$ git clone --single-branch --branch lxde https://github.com/rojenzaman/tlxde.git tlxde
+$ git clone --single-branch --branch signal https://github.com/rojenzaman/tlxde.git slxde
 ```
 
-### LXQT
-
-```
-$ git clone --single-branch --branch lxqt https://github.com/rojenzaman/tlxde.git tlxqt
-```
 
 ### First generate self signed SSL certificate,
 
@@ -29,22 +24,22 @@ $ docker-compose up -d --build
 
 That's all. Check it: https://0.0.0.0:6081
 
-Notice: The `./disk` folder is mounted to the `/home/telegram/Documents` 
+Notice: The `./documents` folder is mounted to the `/home/signal/Documents` 
 
-### Start Telegram
+### Start Signal
 
 #### In Desktop
-Find Telegram icon on the desktop and click it.
+Find Signal icon on the desktop and click it.
 
 #### In Terminal
-Type `telegram`, `Telegram` or `/usr/bin/Telegram` on command line.
+Type `signal-desktop` or `/usr/bin/signal-desktop` on command line.
 
 ### Default Values:
 
 Please edit these in `docker-compose.yml` file.
 
 ```bash
-USER=telegram
-PASSWORD=telegram
-HTTP_PASSWORD=telegram  
+USER=signal
+PASSWORD=signal
+HTTP_PASSWORD=signal  
 ```

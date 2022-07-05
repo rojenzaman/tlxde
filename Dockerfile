@@ -1,21 +1,16 @@
 # https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/
 FROM dorowu/ubuntu-desktop-lxde-vnc:focal
 
-# Telegram version: latest
-RUN wget https://telegram.org/dl/desktop/linux -O /tmp/telegram.tar.xz \
-    && cd /tmp/ \
-    && tar xvfJ /tmp/telegram.tar.xz \
-    && mv /tmp/Telegram/Telegram /usr/bin/Telegram \
-    && ln -s /usr/bin/Telegram /usr/bin/telegram \
-    && rm -rf /tmp/{telegram.tar.xz,Telegram}
+# Signal
+RUN sudo rm -f /etc/apt/sources.list.d/google-chrome.list; \
+    wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg; \
+    cat signal-desktop-keyring.gpg | sudo tee -a /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null; \
+    echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | \
+    sudo tee -a /etc/apt/sources.list.d/signal-xenial.list; \
+    sudo apt update && sudo apt install -y signal-desktop; \
+    sudo rm -rf /var/lib/apt/lists/*;
 
-# Set Telegram desktop file and icon
+# Set Signal desktop file
 ARG USER
-RUN mkdir -p /home/${USER}/Desktop \
-    && wget https://gist.githubusercontent.com/rojenzaman/40302c37189793643da0b0ef7ed7d86f/raw/2e63e48fb0541d4fb9d43ee3da1c3eaf5b66df96/telegram.desktop -O /home/${USER}/Desktop/telegram.desktop \
-    && cp /home/${USER}/Desktop/telegram.desktop /usr/share/applications \
-    && cd / \
-    && wget https://gist.github.com/rojenzaman/40302c37189793643da0b0ef7ed7d86f/raw/2e63e48fb0541d4fb9d43ee3da1c3eaf5b66df96/icons.tar.gz \
-    && tar -xzvf icons.tar.gz \
-    && rm -f icons.tar.gz \
-    && update-icon-caches /usr/share/icons/*
+RUN mkdir -p /home/${USER}/Desktop; \
+    cp /usr/share/applications/signal-desktop.desktop /home/${USER}/Desktop;

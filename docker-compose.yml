@@ -1,20 +1,20 @@
 version: '3.3'
 services:
-    tlxde:
+    signal:
         ports:
             - '6081:443'
         volumes:
-            - '${PWD}/disk:/home/telegram/Documents'
-            - '${PWD}/Telegram Desktop:/home/telegram/Downloads/Telegram Desktop'
+            - '${PWD}/documents:/home/signal/Documents'
+            - '${PWD}/downloads:/home/signal/Downloads'
             - '${PWD}/ssl:/etc/nginx/ssl'
-            - '${PWD}/tdata:/home/telegram/.local/share/TelegramDesktop'
+            - '${PWD}/signal_data:/home/signal/.config/Signal'
             - '/dev/shm:/dev/shm'
         build:
             context: .
             args:
-                USER: telegram
+                USER: signal
         environment:
-            - USER=telegram
-            - PASSWORD=telegram
+            - USER=signal
+            - PASSWORD=signal
             - SSL_PORT=443
-            - HTTP_PASSWORD=telegram
+            - HTTP_PASSWORD=signal
